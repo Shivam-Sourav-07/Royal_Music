@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #090909;
+  color: #f5ebd5;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Royal parchment texture */
+.bg-parchment-texture {
+  background-color: #1c160f;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(201, 164, 76, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(85, 27, 43, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, rgba(201, 164, 76, 0.04) 0%, transparent 100%);
+}
+
+/* Metallic gold text */
+.text-gold-metallic {
+  background: linear-gradient(110deg, #9a7b2e 0%, #C9A44C 30%, #F5E6B0 50%, #C9A44C 70%, #9a7b2e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gold hairline border */
+.border-gold-hairline {
+  border: 1px solid rgba(201, 164, 76, 0.35);
+}
+
+/* Ornamental scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0c0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9a7b2e, #C9A44C);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #C9A44C, #E6C878);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Guitar glow */
+.guitar-glow {
+  filter: drop-shadow(0 20px 60px rgba(201, 164, 76, 0.25)) drop-shadow(0 0 100px rgba(85, 27, 43, 0.3));
+}
+
+/* Decree seal pulse */
+@keyframes seal-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 164, 76, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(201, 164, 76, 0); }
+}
+.seal-pulse {
+  animation: seal-pulse 2.5s ease-out infinite;
+}
+
+/* Live dot */
+@keyframes live-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+.live-dot {
+  animation: live-dot 1.6s ease-in-out infinite;
+}
